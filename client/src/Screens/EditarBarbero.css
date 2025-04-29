@@ -1,0 +1,131 @@
+.edit-container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    box-sizing: border-box;
+    position: absolute;
+    left: 30%;
+    top: 15%;
+  }
+  
+  .edit-title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .edit-form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+  }
+  
+  .edit-form input:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  
+  .edit-button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    text-align: center;
+    color: red;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .edit-title {
+      font-size: 1.4rem;
+    }
+  
+    .edit-form input {
+      font-size: 0.95rem;
+      padding: 10px;
+    }
+  
+    .edit-button {
+      font-size: 1rem;
+    }
+  }
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .confirm-button,
+  .cancel-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .confirm-button {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .cancel-button {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .confirm-button:hover {
+    background-color: #218838;
+  }
+  
+  .cancel-button:hover {
+    background-color: #c82333;
+  }
+  

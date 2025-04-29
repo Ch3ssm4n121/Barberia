@@ -1,0 +1,91 @@
+.container {
+  background: #bdbbbb;
+  padding: 20px;
+  position: absolute;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 550px;
+  text-align: left;
+  margin-left: 40%;
+  top: 15%;
+  }
+  
+  .title {
+    text-align: center;
+    color: #8b0000;
+    margin-bottom: 20px;
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+    display: block;
+  }
+  
+  .input-field {
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 500px; /* Hace los campos más amplios */
+  }
+  
+  .wide {
+    width: 100%;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .submit-button {
+    background-color: #440000;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 120%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  .submit-button:hover {
+    background-color: #a00000;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      max-width: 90%; /* Más estrecho en móviles y tablets */
+    }
+    .input-field {
+      font-size: 14px;
+      padding: 10px;
+      max-width: 100%;
+    }
+    .submit-button {
+      font-size: 14px;
+      padding: 10px;
+      max-width: 100%;
+    }
+  }
+  

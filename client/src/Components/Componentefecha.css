@@ -1,0 +1,54 @@
+.schedule-container {
+    width: 90%;
+    max-width: 500px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    position: absolute;
+    left: 40%;
+    top: 15%;
+  }
+  
+  .schedule-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #b30000; /* rojo fuerte */
+  }
+  
+  .schedule-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .schedule-form label {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #0000cc; /* azul fuerte */
+  }
+  
+  .schedule-form input,
+  .datepicker {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 0.3rem;
+  }
+  
+  .schedule-form button {
+    margin-top: 2rem;
+    padding: 0.8rem;
+    background-color: #b30000; /* rojo fuerte */
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .schedule-form button:hover {
+    background-color: #990000;
+  }
+  

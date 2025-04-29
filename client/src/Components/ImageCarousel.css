@@ -1,0 +1,49 @@
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    position: absolute;
+    left: 30%;
+    top: 15%
+  }
+  
+  .carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .carousel-slide.active {
+    opacity: 1;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .overlay h2 {
+    font-size: 2.5rem;
+    color: #ff0000; /* rojo fuerte */
+    margin-bottom: 10px;
+  }
+  
+  .overlay p {
+    font-size: 1.2rem;
+    color: #0000ff; /* azul fuerte */
+  }
+  

@@ -1,0 +1,52 @@
+/* MostrarUsuarios.css */
+.tabla-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    box-sizing: border-box;
+  }
+  
+  .tabla-title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .tabla {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tabla th,
+  .tabla td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tabla th {
+    background-color: #740000;
+    color: white;
+  }
+  
+  .tabla td {
+    background-color: #f9f9f9;
+  }
+  
+  .tabla tr:hover td {
+    background-color: #e0f7fa;
+  }
+  
+  .error-message {
+    text-align: center;
+    color: red;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
