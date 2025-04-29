@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/NavBar";
-import AgregarCorte from "./Screens/CrearCorte";
+import AgregarCorte from "./Screens/AgregarCorte";
 import Home from "./Screens/Home";
 import Contacto from "./Screens/Contacto";
 import Cortes from "./Screens/Cortes";

@@ -1,25 +1,20 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const multer = require("multer");
-const path = require("path");
-const fs = require("fs");
-const { crearCorte, obtenerCortes } = require("../controllers/cortesController");
+const cortesController = require('../controllers/cortesController');
+const multer = require('multer');
+const path = require('path');
 
-// Configurar multer
+// Configuración de almacenamiento para imágenes
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    const dir = "./uploads";
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir);
-    cb(null, dir);
-  },
+  destination: 'uploads/',
   filename: (req, file, cb) => {
     cb(null, Date.now() + path.extname(file.originalname));
   },
 });
+
 const upload = multer({ storage });
 
-// Rutas
-router.post("/", upload.single("imagen"), crearCorte);
-router.get("/", obtenerCortes);
+// Ruta para crear un nuevo corte
+router.post('/', upload.single('imagen'), cortesController.crearCorte);
 
 module.exports = router;

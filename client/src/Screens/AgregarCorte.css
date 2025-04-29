@@ -1,0 +1,64 @@
+.contenedor-principal {
+    margin-left: 300px; /* Ajusta este valor según el ancho de tu sidebar */
+    padding: 40px 20px;
+    background-color: #f6f2f2;
+    min-height: 100vh;
+  }
+  
+  .formulario-corte {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .formulario-corte h2 {
+    text-align: center;
+    color: #7b1313;
+    margin-bottom: 25px;
+  }
+  
+  .formulario-corte label {
+    display: block;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #444;
+  }
+  
+  .formulario-corte input[type="text"],
+  .formulario-corte input[type="number"],
+  .formulario-corte textarea,
+  .formulario-corte input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    background-color: #fdfdfd;
+  }
+  
+  .formulario-corte textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .formulario-corte button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px;
+    background-color: #7b1313;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .formulario-corte button:hover {
+    background-color: #5e0f0f;
+  }

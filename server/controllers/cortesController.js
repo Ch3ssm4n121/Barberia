@@ -1,25 +1,16 @@
 const db = require('../db/conexion');
+const path = require('path');
 
-const crearCorte = (req, res) => {
+exports.crearCorte = (req, res) => {
   const { nombre, descripcion, precio } = req.body;
-  const imagen = req.file.filename;
+  const imagen = req.file ? req.file.filename : null;
 
-  const sql = "INSERT INTO cortes (nombre, descripcion, precio, imagen) VALUES (?, ?, ?, ?)";
-
+  const sql = 'INSERT INTO cortes (nombre, descripcion, precio, imagen) VALUES (?, ?, ?, ?)';
   db.query(sql, [nombre, descripcion, precio, imagen], (err, result) => {
     if (err) {
-      console.error("Error al agregar corte:", err);
-      return res.status(500).send("Error en el servidor");
+      console.error('Error al insertar corte:', err);
+      return res.status(500).json({ message: 'Error al insertar corte' });
     }
-    res.send("Corte agregado exitosamente");
+    res.status(200).json({ message: 'Corte agregado correctamente' });
   });
 };
-
-const obtenerCortes = (req, res) => {
-  db.query("SELECT * FROM cortes", (err, result) => {
-    if (err) return res.status(500).send("Error al obtener cortes");
-    res.json(result);
-  });
-};
-
-module.exports = { crearCorte, obtenerCortes };

@@ -19,7 +19,7 @@ const SidebarAdmin = () => {
         <li className="sidebar-item"><Link to="/HomeClientes" onClick={() => setIsOpen(false)}>Administracion Clientes</Link></li>
         <li className="sidebar-item"><Link to="/HomeBarberos" onClick={() => setIsOpen(false)}>Administracion Barberos</Link></li>
         <li className="sidebar-item">Administrar Citas</li>
-        <li className="sidebar-item"><Link to="/admin-cortes" onClick={() => setIsOpen(false)}>Gestionar Cortes</Link></li>
+        <li className="sidebar-item"><Link to="/agregar-corte" onClick={() => setIsOpen(false)}>Gestionar Cortes</Link></li>
         <li className="sidebar-item"><Link to="/VentasGenerales" onClick={() => setIsOpen(false)}>Ventas Generales</Link></li>
         <li className="sidebar-item"><Link to="/Settings" onClick={() => setIsOpen(false)}>Ajustes</Link></li>
         <button className="logout-button" onClick={cerrarSesion}>Cerrar Sesión</button>
