@@ -17,7 +17,7 @@ const AdminElimBarbero = () => {
   };
 
   const confirmarEliminacion = () => {
-    axios.delete(`http://localhost:3001/usuarios`, {
+    axios.delete(`http://localhost:3001/api/usuarios/usuarios`, {
       data: { nombre, estado },
     })
       .then(res => {

@@ -20,7 +20,7 @@ const Register = () => {
   };
 
   const add= () => {
-    Axios.post("http://localhost:3001/create", formData).then(() => {
+    Axios.post("http://localhost:3001/api/usuarios/create", formData).then(() => {
       alert("has sido registrado correctamente")
     });
   };

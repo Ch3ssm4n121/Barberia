@@ -10,7 +10,7 @@ const EditarBarberoManual = () => {
   const handleBuscar = () => {
     if (!inputId) return;
 
-    axios.get(`http://localhost:3001/barberos/${inputId}`)
+    axios.get(`http://localhost:3001/api/usuarios/barberos/${inputId}`)
       .then(res => {
         setFormData(res.data);
         setError("");

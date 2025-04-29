@@ -6,7 +6,7 @@ const Barberos = () => {
   const [barberos, setBarberos] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/barberos")
+    axios.get("http://localhost:3001/api/usuarios/barberos")
       .then(res => setBarberos(res.data))
       .catch(err => console.error("Error al obtener barberos:", err));
   }, []);

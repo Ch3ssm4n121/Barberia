@@ -7,7 +7,7 @@ const MostrarBarberos = () => {
   const [mensaje, setMensaje] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:3001/mostrarclientes?estado=Barbero")
+    axios.get("http://localhost:3001/api/usuarios/mostrarclientes?estado=Barbero")
       .then(res => {
         setBarberos(res.data);
       })

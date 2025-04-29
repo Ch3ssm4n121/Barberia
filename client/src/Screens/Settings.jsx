@@ -35,7 +35,7 @@ function Settings() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.put(`http://localhost:3001/modificarusuarios/${usuario.id}`, formData);
+      const res = await axios.put(`http://localhost:3001/api/usuarios/modificarusuarios/${usuario.id}`, formData);
   
       if (res.data && res.data.usuarioActualizado) {
         const actualizado = res.data.usuarioActualizado;
