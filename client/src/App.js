@@ -20,6 +20,7 @@ import AdminElimBarbero from "./Screens/AdminElimBarbero";
 import HomeClientes from "./Screens/HomeClientes";
 import VentasGenerales from "./Screens/VentasGenerales";
 import NavBarNoUsuario from './Components/NavBarNoUsuario'; 
+import AgregarContacto from './Screens/AgregarContacto';
 
 function App() {
   const usuario = JSON.parse(localStorage.getItem('usuario'));
@@ -54,7 +55,7 @@ function App() {
         <Route path="/AdminElimBarbero" element={<AdminElimBarbero />} />
         <Route path="/HomeClientes" element={<HomeClientes />} />
         <Route path="/VentasGenerales" element={<VentasGenerales />} />
-
+        <Route path="/AgregarContacto" element={<AgregarContacto />} />
       </Routes>
     </Router>
     </div>

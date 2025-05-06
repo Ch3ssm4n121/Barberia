@@ -14,3 +14,13 @@ exports.crearCorte = (req, res) => {
     res.status(200).json({ message: 'Corte agregado correctamente' });
   });
 };
+exports.obtenerCortes = (req, res) => {
+  const sql = 'SELECT * FROM cortes';
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error('Error al obtener cortes:', err);
+      return res.status(500).json({ message: 'Error al obtener cortes' });
+    }
+    res.status(200).json(results);
+  });
+};

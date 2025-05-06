@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import axios from 'axios';
-import './AgregarCorte.css';
+import './AgregarCorte.css';  
 
 const AgregarCorte = () => {
   const [formData, setFormData] = useState({
