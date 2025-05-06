@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './AgregarContacto.css';
 
@@ -10,6 +10,22 @@ const AgregarContacto = () => {
     especialidad: '',
     foto: null,
   });
+
+  const [barberos, setBarberos] = useState([]);
+
+  // Obtener barberos
+  useEffect(() => {
+    obtenerBarberos();
+  }, []);
+
+  const obtenerBarberos = async () => {
+    try {
+      const res = await axios.get('http://localhost:3001/api/barberos');
+      setBarberos(res.data);
+    } catch (error) {
+      console.error('Error al obtener barberos:', error);
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -39,6 +55,7 @@ const AgregarContacto = () => {
           especialidad: '',
           foto: null,
         });
+        obtenerBarberos(); // Recargar la lista
       } else {
         alert('Error al agregar barbero');
       }
@@ -59,6 +76,27 @@ const AgregarContacto = () => {
         <input type="file" name="foto" accept="image/*" onChange={handleChange} />
         <button type="submit">Agregar</button>
       </form>
+
+      <h3 className="subtitulo-barberos">Barberos registrados</h3>
+      <div className="cortes-lista">
+        {barberos.length === 0 ? (
+          <p>No hay barberos registrados.</p>
+        ) : (
+          barberos.map((barbero) => (
+            <div key={barbero.id} className="corte-card">
+              <img
+                src={`http://localhost:3001/uploads/${barbero.foto}`}
+                alt={barbero.nombre}
+                className="corte-img"
+              />
+              <h3>{barbero.nombre}</h3>
+              <p><strong>Tel:</strong> {barbero.telefono}</p>
+              <p><strong>Correo:</strong> {barbero.correo}</p>
+              <p><strong>Especialidad:</strong> {barbero.especialidad}</p>
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 };
