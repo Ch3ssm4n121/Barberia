@@ -20,7 +20,6 @@ const NavBar = () => {
           <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
           <li><Link to="/contacto" onClick={() => setIsOpen(false)}>Contacto</Link></li>
           <li><Link to="/cortes" onClick={() => setIsOpen(false)}>Cortes</Link></li>
-          <li><Link to="/barbero" onClick={() => setIsOpen(false)}>Barbero</Link></li>
           <li><Link to="/agendar" onClick={() => setIsOpen(false)}>Agendar Cita</Link></li>
           <li><Link to="/Settings" onClick={() => setIsOpen(false)}>Ajustes</Link></li>
           <button className="logout-button" onClick={cerrarSesion}>Cerrar Sesión</button>
