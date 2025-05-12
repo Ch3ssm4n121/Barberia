@@ -36,7 +36,7 @@
 
 .agendar-form button {
   padding: 12px;
-  background-color: #2e8b57;
+  background-color: #2e0d0d;
   color: white;
   font-weight: bold;
   border: none;
@@ -48,7 +48,7 @@
 }
 
 .agendar-form button:hover {
-  background-color: #256d45;
+  background-color: #970000;
 }
 
 .confirmacion-mensaje {
