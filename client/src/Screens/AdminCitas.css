@@ -1,0 +1,74 @@
+.admin-citas-container {
+   margin-left: 260px;
+  padding: 30px;
+  width: calc(95% - 260px);
+  background-color: #f7f3f3;
+  min-height: 100vh;
+  overflow-y: auto;
+}
+
+.admin-citas-container h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.tabla-citas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.tabla-citas thead {
+  background-color: #6a0f0f;
+  color: #fff;
+}
+
+.tabla-citas th,
+.tabla-citas td {
+  padding: 12px 15px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.tabla-citas tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tabla-citas button {
+  margin: 2px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tabla-citas button:nth-child(1) {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.tabla-citas button:nth-child(2) {
+  background-color: #f44336;
+  color: white;
+}
+
+.tabla-citas button:nth-child(3) {
+  background-color: #2196F3;
+  color: white;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .tabla-citas th, .tabla-citas td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .tabla-citas button {
+    font-size: 12px;
+    padding: 5px;
+  }
+}

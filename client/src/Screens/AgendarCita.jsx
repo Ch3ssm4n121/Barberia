@@ -39,7 +39,7 @@ const AgendarCita = () => {
         fecha: formData.fecha,
         hora: formData.hora
       };
-      await axios.post('http://localhost:3001/api/citas/nueva', cita);
+      await axios.post('http://localhost:3001/api/citas/crear', cita);
       alert('Cita agendada correctamente');
     } catch (err) {
       console.error(err);

@@ -2,7 +2,9 @@
   text-align: center;
   background-color: #afafaf;
   background-size: cover;
-
+display: flex;
+  height: 100vh;
+  overflow: hidden;
   
 }
 .flex{
@@ -10,4 +12,12 @@
   justify-content: center;
   align-items: left !important;
   height: 100vh;
+}
+.sidebar {
+  width: 260px;
+  background-color: #800000;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }

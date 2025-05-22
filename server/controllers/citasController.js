@@ -9,35 +9,32 @@ exports.crearCita = (req, res) => {
   });
 };
 
-exports.obtenerPendientes = (req, res) => {
-  const sql = `
-    SELECT cp.id, u.nombre AS cliente, b.nombre AS barbero, c.nombre AS corte, cp.fecha, cp.hora
-    FROM citapendiente cp
-    JOIN usuarios u ON cp.cliente_id = u.id
-    JOIN barberos b ON cp.barbero_id = b.id
-    JOIN cortes c ON cp.corte_id = c.id
-  `;
-  db.query(sql, (err, results) => {
-    if (err) return res.status(500).json({ error: 'Error al obtener citas' });
+exports.obtenerCitasPendientes = (req, res) => {
+  db.query('SELECT * FROM citapendiente', (err, results) => {
+    if (err) return res.status(500).json({ error: 'Error al obtener citas pendientes' });
     res.status(200).json(results);
   });
 };
 
-exports.marcarComoCumplida = (req, res) => {
-  const citaId = req.params.id;
-  const getSql = 'SELECT * FROM citapendiente WHERE id = ?';
-  const insertSql = 'INSERT INTO citacumplida (cliente_id, corte_id, barbero_id, fecha, hora) VALUES (?, ?, ?, ?, ?)';
-  const deleteSql = 'DELETE FROM citapendiente WHERE id = ?';
+exports.obtenerCitasCumplidas = (req, res) => {
+  db.query('SELECT * FROM citacumplida', (err, results) => {
+    if (err) return res.status(500).json({ error: 'Error al obtener citas cumplidas' });
+    res.status(200).json(results);
+  });
+};
 
-  db.query(getSql, [citaId], (err, results) => {
+exports.cumplirCita = (req, res) => {
+  const id = req.params.id;
+
+  db.query('SELECT * FROM citapendiente WHERE id = ?', [id], (err, results) => {
     if (err || results.length === 0) return res.status(404).json({ error: 'Cita no encontrada' });
 
-    const { cliente_id, corte_id, barbero_id, fecha, hora } = results[0];
-    db.query(insertSql, [cliente_id, corte_id, barbero_id, fecha, hora], (err) => {
-      if (err) return res.status(500).json({ error: 'Error al mover cita a cumplida' });
+    const cita = results[0];
+    db.query('INSERT INTO citacumplida SET ?', cita, (err2) => {
+      if (err2) return res.status(500).json({ error: 'Error al mover cita a cumplidas' });
 
-      db.query(deleteSql, [citaId], (err) => {
-        if (err) return res.status(500).json({ error: 'Error al eliminar cita pendiente' });
+      db.query('DELETE FROM citapendiente WHERE id = ?', [id], (err3) => {
+        if (err3) return res.status(500).json({ error: 'Error al eliminar cita pendiente' });
         res.status(200).json({ message: 'Cita marcada como cumplida' });
       });
     });
@@ -45,24 +42,10 @@ exports.marcarComoCumplida = (req, res) => {
 };
 
 exports.rechazarCita = (req, res) => {
-  const citaId = req.params.id;
-  const sql = 'DELETE FROM citapendiente WHERE id = ?';
-  db.query(sql, [citaId], (err) => {
+  const id = req.params.id;
+
+  db.query('DELETE FROM citapendiente WHERE id = ?', [id], (err) => {
     if (err) return res.status(500).json({ error: 'Error al rechazar cita' });
     res.status(200).json({ message: 'Cita rechazada' });
-  });
-};
-
-exports.obtenerCumplidas = (req, res) => {
-  const sql = `
-    SELECT cc.id, u.nombre AS cliente, b.nombre AS barbero, c.nombre AS corte, cc.fecha, cc.hora
-    FROM citacumplida cc
-    JOIN usuarios u ON cc.cliente_id = u.id
-    JOIN barberos b ON cc.barbero_id = b.id
-    JOIN cortes c ON cc.corte_id = c.id
-  `;
-  db.query(sql, (err, results) => {
-    if (err) return res.status(500).json({ error: 'Error al obtener citas cumplidas' });
-    res.status(200).json(results);
   });
 };

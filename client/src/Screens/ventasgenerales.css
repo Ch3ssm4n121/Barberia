@@ -1,0 +1,127 @@
+.ventas-generales-container {
+    padding: 20px;
+    background-color: #f9f9f9; /* Un fondo claro para la sección */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    font-family: sans-serif; /* Una fuente legible */
+    max-width: 900px; /* Limita el ancho para mejor lectura en pantallas grandes */
+    margin: 20px auto; /* Centra el contenedor si es más estrecho que la pantalla */
+}
+
+.ventas-generales-container h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.filtros-ventas {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no caben */
+    gap: 15px; /* Espacio entre los elementos del filtro */
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.filtros-ventas label {
+    display: flex;
+    flex-direction: column; /* Etiqueta encima del input */
+    gap: 5px; /* Espacio entre la etiqueta y el input */
+    font-size: 0.9em;
+    color: #555;
+}
+
+.filtros-ventas input[type="date"] {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+
+.filtros-ventas button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Color azul primario (puedes cambiarlo) */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Ajusta si es necesario cuando está en columna con los inputs */
+}
+
+.filtros-ventas button:hover {
+    background-color: #0056b3; /* Un azul más oscuro al pasar el mouse */
+}
+
+/* Estilos para la sección de resultados */
+.resultados-ventas {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+
+.grafica-container {
+    width: 100%;
+    max-width: 700px; /* Ajusta según el tamaño deseado de la gráfica */
+    margin: 0 auto 20px auto; /* Centra la gráfica y añade margen inferior */
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #fdfdfd;
+}
+
+.resultados-ventas h3 {
+    color: #333;
+    text-align: center;
+    font-size: 1.3em;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+}
+
+/* Media Query para mejorar la responsividad en pantallas pequeñas */
+@media (max-width: 768px) {
+    .filtros-ventas {
+        flex-direction: column; /* Apila los filtros en pantallas pequeñas */
+        align-items: stretch; /* Hace que los inputs y el botón ocupen todo el ancho */
+    }
+
+    .filtros-ventas label,
+    .filtros-ventas input[type="date"],
+    .filtros-ventas button {
+        width: 100%; /* Asegura que ocupen el ancho disponible */
+        box-sizing: border-box; /* Incluye padding y borde en el ancho/alto total */
+    }
+
+    .filtros-ventas button {
+      margin-top: 15px; /* Mantiene un espacio sobre el botón */
+    }
+
+    .ventas-generales-container h2 {
+        font-size: 1.5em;
+    }
+
+    .resultados-ventas h3 {
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width: 769px) {
+    .filtros-ventas label {
+        flex-direction: row; /* Lado a lado en pantallas más grandes */
+        align-items: center;
+        gap: 8px;
+    }
+    .filtros-ventas button {
+        margin-top: 0; /* Remueve el margen superior que se usó para vista móvil */
+        margin-left: auto; /* Empuja el botón a la derecha si hay espacio */
+    }
+}
